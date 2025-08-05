@@ -254,7 +254,7 @@ cap.set(cv2.CAP_PROP_FPS, 60)
 pose = mp_pose.Pose(model_complexity=2)
 ```
 
-## 🎓 Validación Científica
+##  Validación Científica
 
 ### Comparación con Gold Standard
 Este prototipo está diseñado para validarse contra:
@@ -273,7 +273,7 @@ Este prototipo está diseñado para validarse contra:
 - **2D vs 3D**: Análisis limitado al plano sagital/frontal
 - **Calibración individual**: Requiere ajustes por sujeto
 
-## 🔬 Fundamento Científico
+## Fundamento Científico
 
 ### Referencias Implementadas
 1. **MediaPipe Pose**: Bazarevsky et al. (2020) - Google Research
@@ -287,7 +287,7 @@ Este prototipo está diseñado para validarse contra:
 - **Detección de asimetrías y riesgo de lesión**
 - **Seguimiento de rehabilitación**
 
-## 🤝 Contribuciones y Desarrollo
+## Contribuciones y Desarrollo
 
 ### Mejoras Futuras Planificadas
 - [ ] **Integración con sensores IMU** reales
@@ -297,18 +297,16 @@ Este prototipo está diseñado para validarse contra:
 - [ ] **Base de datos** para seguimiento longitudinal
 
 ### Cómo Contribuir
-1. 🍴 Fork del repositorio
-2. 🌟 Crear branch para nuevas características
-3. 🧪 Implementar y probar cambios
-4. 📝 Documentar modificaciones
-5. 🔄 Crear Pull Request
+1. Fork del repositorio
+2. Crear branch para nuevas características
+3. Implementar y probar cambios
+4. Documentar modificaciones
+5. Crear Pull Request
 
 ## 📞 Soporte y Contacto
 
 ### Para Problemas Técnicos
-- 📧 Email: [tu-email@universidad.edu.co]
-- 📱 WhatsApp: [+57-XXX-XXX-XXXX]
-- 💬 Issues en GitHub: [repository-url/issues]
+- 📧 Email: [danielan.ramirezs@ecci.edu.co]
 
 ### Para Colaboraciones Académicas
 - 🏛️ Universidad ECCI - Facultad de Ingeniería
@@ -332,7 +330,7 @@ Este proyecto se desarrolla como parte de una tesis de grado en Ingeniería Elec
 
 ---
 
-## 🎉 ¡Comienza tu Análisis!
+##  Comienza el análisis:
 
 ```bash
 # Configuración inicial
@@ -348,5 +346,5 @@ python jump_analysis_prototype.py
 python data_analysis_script.py
 ```
 
-**¡Esperamos que este sistema contribuya al desarrollo del deporte y la biomecánica en Colombia! 🇨🇴🏃‍♂️💪**
+**¡Esperamos que este sistema contribuya al desarrollo del deporte y la biomecánica en Colombia, evaluando el rendimiento de diferentes deportistas a nivel local y mundial, con el fin de contribuir en la mejora del modelo de estudio**
 -
