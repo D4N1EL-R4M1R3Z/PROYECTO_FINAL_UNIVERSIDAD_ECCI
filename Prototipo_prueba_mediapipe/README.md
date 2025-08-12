@@ -4,7 +4,7 @@
 EL presente tiene como objetivo generar una prueba de ensayo para su uso, de forma anticipada utiliza la cámara del computador para enlazar inicialmente una entrada de información dede el PC y así interpretar la información que captura.
 
 - Este cuenta con 2 etapas:
-  1. Detección y escritura de landmarks sobre sujeto de prueba, adicional de pasos para exportar esta data de información a csv para su posterior análisis con el segundo código.
+  1. Detección y escritura de landmarks sobre sujeto de prueba, adicional de pasos para exportar esta data de información a csv para su posterior análisis con el segundo código **Analisis_post_process.py**.
 
 ## Características Principales
 
