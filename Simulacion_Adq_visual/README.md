@@ -101,10 +101,10 @@ graph TD
 ## Estructura de Datos de Salida
 
 ### Archivos Generados:
-- **`*_visual_*.csv`**: Datos de landmarks y métricas biomecánicas
-- **`*_imu_sim_*.csv`**: Datos simulados de sensores inerciales  
-- **`*_metadata_*.json`**: Información de la sesión y configuración
-- **`*_reporte_*.txt`**: Análisis estadístico automático
+- `*_visual_*.csv`: Datos de landmarks y métricas biomecánicas
+- `*_imu_sim_*.csv`: Datos simulados de sensores inerciales  
+- `*_metadata_*.json`: Información de la sesión y configuración
+- `*_reporte_*.txt`: Análisis estadístico automático
 
 ### Formato de Datos:
 - **Separador**: `;` (formato europeo)
