@@ -40,6 +40,7 @@ graph TD
     C --> G[Exportación de Datos]
 ```
 
+### **Clases diseñadas:**
 ### 1. **Adquisición Visual** (`CameraDataAcquisition`)
 - Captura de video desde webcam o cámara profesional
 - Detección de 33 landmarks corporales usando MediaPipe
