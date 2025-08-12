@@ -1,12 +1,12 @@
 # Sistema de Adquisición de Datos Biomecánicos para Análisis de Salto Largo
 
-## 🎯 Objetivo del Proyecto
+## Objetivo del Proyecto
 
 Este notebook presenta un **sistema híbrido de adquisición de datos biomecánicos** diseñado específicamente para el análisis del salto largo en atletismo. El sistema integra análisis de video en tiempo real con simulación de datos inerciales (IMU) para proporcionar métricas biomecánicas completas.
 
 ---
 
-## 🏃‍♂️ Contexto Biomecánico
+## Contexto Biomecánico
 
 ### ¿Por qué es importante el análisis biomecánico en salto largo?
 
@@ -18,15 +18,15 @@ El salto largo es una disciplina técnicamente compleja que requiere la optimiza
 - **Técnica de aterrizaje**: Maximización de la distancia oficial
 
 ### Variables biomecánicas clave:
-- 📏 **Centro de masa corporal** y su trayectoria
-- 📐 **Ángulos articulares** (especialmente rodilla y cadera)
-- ⚖️ **Simetría bilateral** en el movimiento
-- 🏃 **Velocidad horizontal** estimada
-- 📊 **Métricas de calidad** de la ejecución técnica
+- **Centro de masa corporal** y su trayectoria
+- **Ángulos articulares** (especialmente rodilla y cadera)
+- **Simetría bilateral** en el movimiento
+- **Velocidad horizontal** estimada
+- **Métricas de calidad** de la ejecución técnica
 
 ---
 
-## 🛠️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ### Componentes principales:
 
@@ -60,7 +60,7 @@ graph TD
 
 ---
 
-## 📊 Métricas Biomecánicas Calculadas
+## Métricas Biomecánicas Calculadas
 
 ### Análisis Postural:
 - **Centro de masa (COM)**: Calculado usando pesos segmentales antropométricos
@@ -81,7 +81,7 @@ graph TD
 
 ---
 
-## 🎮 Modo de Operación
+## Modo de Operación
 
 ### Configuración de Sesión:
 - **ID del Atleta**: Identificación única
@@ -97,7 +97,7 @@ graph TD
 
 ---
 
-## 📁 Estructura de Datos de Salida
+## Estructura de Datos de Salida
 
 ### Archivos Generados:
 - **`*_visual_*.csv`**: Datos de landmarks y métricas biomecánicas
@@ -113,7 +113,7 @@ graph TD
 
 ---
 
-## 🔧 Requisitos Técnicos
+## Requisitos Técnicos
 
 ### Dependencias de Python:
 ```python
@@ -134,15 +134,15 @@ tkinter                 # Interfaz gráfica (incluido en Python)
 
 ---
 
-## 📈 Ventajas del Sistema
+## Ventajas del Sistema
 
-### ✅ **Ventajas Técnicas:**
+### **Ventajas Técnicas:**
 - **No invasivo**: Sin necesidad de marcadores físicos
 - **Tiempo real**: Feedback inmediato durante el entrenamiento
 - **Escalable**: Preparado para hardware profesional
 - **Portátil**: Funciona con equipo básico (webcam)
 
-### ✅ **Ventajas Científicas:**
+### **Ventajas Científicas:**
 - **Reproducible**: Protocolos estandarizados
 - **Cuantitativo**: Métricas objetivas y precisas
 - **Longitudinal**: Seguimiento de progreso temporal
@@ -150,7 +150,7 @@ tkinter                 # Interfaz gráfica (incluido en Python)
 
 ---
 
-## 🎯 Próximos Pasos
+## Próximos Pasos
 
 ### Desarrollo Inmediato:
 1. **Validación con webcam**: Pruebas con movimientos controlados
@@ -165,7 +165,7 @@ tkinter                 # Interfaz gráfica (incluido en Python)
 
 ---
 
-## 📚 Referencias Bibliográficas
+## Referencias Bibliográficas
 
 - **Biomecánica del Salto Largo**: Hay, J.G. (1993). *The Biomechanics of Sports Techniques*
 - **Análisis de Marcha**: Winter, D.A. (2009). *Biomechanics and Motor Control of Human Movement*
@@ -173,3 +173,4 @@ tkinter                 # Interfaz gráfica (incluido en Python)
 - **Pesos Segmentales**: de Leva, P. (1996). *Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters*
 
 ---
+## Desarrollado por Daniel Andres Ramirez Segura - Universidad ECCI - Facultad de Ingeniería Electrónica
