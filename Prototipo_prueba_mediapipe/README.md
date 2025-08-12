@@ -30,7 +30,7 @@ Este cuenta con 2 etapas:
 - **Python 3.8 o superior**
 - **Pip** (gestor de paquetes de Python)
 
-## 🛠️ Instalación
+## Instalación
 
 ### Paso 1: Clonar o descargar los archivos
 ```bash
