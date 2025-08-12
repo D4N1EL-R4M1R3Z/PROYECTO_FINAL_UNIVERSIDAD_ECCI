@@ -2,9 +2,11 @@
 
 ## 🎯 Descripción del Proyecto
 
-Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis "Metodología Híbrida Inercial-Visual para el Análisis Técnico y Físico del Salto en Deportistas". El sistema utiliza **MediaPipe** para detectar poses humanas y calcular métricas biomecánicas en tiempo real.
+Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis "Metodología Híbrida Inercial-Visual para el Análisis Técnico y Físico del Salto largo en Deportistas". El sistema utiliza **MediaPipe** para detectar poses humanas y calcular métricas biomecánicas en tiempo real, además se incorporá la lectura desde sensores inerciales (IMU) que cuentan con magnetometro para la ubicación espacial o geolocalización del sujeto de prueba, tambien para acceder a datos como acelearación lineal que nos permite el cálculo de la fuerza que actúa sobre nuestro sujeto, y el cálculo de la velocidad angular, para saber la rapidez con que nuestro deportista se mueve desde el punto de partida hasta las fases de punto de despegue, y posterior punto de aterrizaje.
 
-## 🚀 Características Principales
+**NOTA:** Esta es una metodología para el diseño de este prototipo de forma completamente funcional, nuestro principal interés además de academico es satisfacer la creciente demanda de estos sistemas que aporten al deporte colombiano, contribuyendo en que desde diferentes sectores, poblaciones sin importar sus ingresos puedan acceder a entrenamientos que los acerquen a cumplir sus sueños de participar en estas competencias y lograr mejorar el rendimiento con estándares de deportistas profesionales, formando desde la electrónica y machine learning, personas con altos niveles de entrenamiento y aumentar las posibilidades de estar al nivel internacional de grandes figuras en el **salto largo**.
+
+## Características Principales
 
 - **Detección de poses en tiempo real** usando MediaPipe (33 puntos clave)
 - **Análisis biomecánico automatizado** (altura, tiempo de vuelo, ángulos articulares)
@@ -14,8 +16,9 @@ Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis 
 - **Generación de reportes visuales** completos
 - **Exportación de datos** en formato CSV
 - **Comparación entre múltiples sesiones**
+- **Interfaz de usuario** con entorno para iniciar la ejecución y finalizar por cada deportista evaluado
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 ### Hardware Mínimo
 - **CPU**: Intel i5 o AMD equivalente (recomendado: i7)
@@ -31,7 +34,7 @@ Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis 
 
 ### Paso 1: Clonar o descargar los archivos
 ```bash
-# Si usas Git
+# Utiliza nuestro repo y clona el archivo principal con el entorno simulado
 git clone <repository-url>
 cd jump-analysis-system
 
@@ -40,7 +43,7 @@ cd jump-analysis-system
 
 ### Paso 2: Ejecutar configuración automática
 ```bash
-# Ejecutar el script de configuración
+# Ejecuta el script de configuración
 python setup_environment.py
 ```
 
@@ -63,7 +66,7 @@ pip install scipy>=1.7.0
 pip install scikit-learn>=1.0.0
 ```
 
-## 🎮 Uso del Sistema
+## Uso del Sistema
 
 ### Captura de Datos en Tiempo Real
 
@@ -72,16 +75,16 @@ python jump_analysis_prototype.py
 ```
 
 **Controles durante la captura:**
-- `R`: Iniciar/detener grabación
-- `S`: Guardar datos de la sesión actual
-- `Q`: Salir del programa
+- `Iniciar/detener grabación`
+- `Guardar datos de la sesión actual`
+- `Salir del programa`
 
 **Instrucciones para mejores resultados:**
-1. 📍 Colócate de **perfil** a la cámara (vista lateral)
-2. 📏 Mantén una distancia de **2-3 metros** de la cámara
-3. 💡 Asegúrate de tener **buena iluminación**
-4. 👕 Usa ropa **contrastante** con el fondo
-5. 🏃‍♂️ Realiza movimientos **fluidos y naturales**
+1. Colócate de **perfil** a la cámara (vista lateral)
+2. Mantén una distancia de **2-3 metros** de la cámara
+3. Asegúrate de tener **buena iluminación**
+4. Usa ropa **contrastante** con el fondo
+5. Realiza movimientos **fluidos y naturales**
 
 ### Análisis Post-Procesamiento
 
@@ -90,12 +93,12 @@ python data_analysis_script.py
 ```
 
 Este script automáticamente:
-- 🔍 Encuentra el archivo de datos más reciente
-- 📊 Calcula métricas biomecánicas avanzadas
-- 🎯 Clasifica el tipo de salto realizado
-- 📈 Genera reportes visuales completos
-- 💾 Exporta resúmenes en CSV
-- 💡 Proporciona recomendaciones técnicas
+- Encuentra el archivo de datos más reciente
+- Calcula métricas biomecánicas avanzadas
+- Clasifica el tipo de salto realizado
+- Genera reportes visuales completos
+- Exporta resúmenes en CSV
+- Proporciona recomendaciones técnicas
 
 ### Generar Datos de Demostración
 
@@ -105,7 +108,7 @@ python setup_requirements.py
 
 Incluye un generador que crea datos sintéticos realistas para probar el sistema sin necesidad de realizar saltos reales.
 
-## 📊 Métricas Calculadas
+## Métricas Calculadas
 
 ### Métricas Físicas
 - **Altura de salto** (cm): Elevación máxima del centro de masa
@@ -124,7 +127,7 @@ Incluye un generador que crea datos sintéticos realistas para probar el sistema
 - **Patrones de movimiento**: Secuencias de activación articular
 - **Coordinación**: Sincronización entre segmentos corporales
 
-## 📁 Estructura de Archivos
+## Estructura de Archivos
 
 ```
 jump-analysis-system/
@@ -143,7 +146,7 @@ jump-analysis-system/
     └── processed_data_XXXXXX.csv  # Datos procesados
 ```
 
-## 🎯 Casos de Uso
+## Casos de Uso
 
 ### 1. Evaluación Individual
 ```python
@@ -168,7 +171,7 @@ python data_analysis_script.py
 # Obtener recomendaciones de mejora
 ```
 
-## 📈 Interpretación de Resultados
+## Interpretación de Resultados
 
 ### Valores de Referencia (Deportistas Recreativos)
 
@@ -182,26 +185,26 @@ python data_analysis_script.py
 
 ### Indicadores de Técnica
 
-**🟢 Técnica Excelente:**
+** Técnica Excelente:**
 - Simetría > 90%
 - Ángulos de rodilla 90-120° en despegue
 - Coordinación fluida de extremidades
 
-**🟡 Técnica Moderada:**
+** Técnica Moderada:**
 - Simetría 80-90%
 - Ligeras compensaciones detectables
 - Margen de mejora identificado
 
-**🔴 Técnica Deficiente:**
+** Técnica Deficiente:**
 - Simetría < 80%
 - Asimetrías significativas
 - Patrones de riesgo de lesión
 
-## 🔧 Solución de Problemas
+## Solución de Problemas
 
 ### Problemas Comunes
 
-**❌ "No se detecta la cámara"**
+** "No se detecta la cámara"**
 ```bash
 # Verificar dispositivos disponibles
 python -c "import cv2; print(cv2.videoio_registry.getCameraBackends())"
@@ -309,18 +312,18 @@ Este prototipo está diseñado para validarse contra:
 - 📧 Email: [danielan.ramirezs@ecci.edu.co]
 
 ### Para Colaboraciones Académicas
-- 🏛️ Universidad ECCI - Facultad de Ingeniería
-- 👨‍🏫 Directores de Tesis: Ing. Ronald Rodriguez, Ing. Nataly Maldonado
-- 📍 Bogotá D.C., Colombia
+- Universidad ECCI - Facultad de Ingeniería
+- Directores de Tesis: Ing. Ronald Rodriguez, Ing. Nataly Maldonado
+- Bogotá D.C., Colombia
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto se desarrolla como parte de una tesis de grado en Ingeniería Electrónica y está disponible para uso académico y de investigación.
 
 **Cita recomendada:**
 ```bibtex
-@mastersthesis{ramirez2025jump,
-  title={Metodología Híbrida Inercial-Visual para el Análisis Técnico y Físico del Salto en Deportistas},
+@mastersthesis{ramirez_campo_lopez_2025jump,
+  title={Metodología Híbrida Inercial-Visual para el Análisis Técnico y Físico del Salto largo en Deportistas},
   author={Ramírez, Daniel A. and Campo, José A. and López, Diego A.},
   school={Universidad ECCI},
   year={2025},
