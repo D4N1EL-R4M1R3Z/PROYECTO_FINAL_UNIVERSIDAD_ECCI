@@ -1,0 +1,45 @@
+REPORTE DE ANÁLISIS BIOMECÁNICO - SALTO LARGO
+============================================================
+
+Atleta: Diego_lopez_1
+Sesión: entrenamiento
+Fecha: 2025-08-14 18:22:42
+Duración: 51.8 segundos
+Muestras: 388
+Puntuación de calidad: 39.8/100
+
+ANÁLISIS DE CALIDAD DE DATOS:
+----------------------------------------
+Confianza de detección:
+  • Promedio: 0.597
+  • Muestras de alta calidad: 184
+  • Porcentaje bueno: 66.0%
+
+RECOMENDACIONES:
+--------------------
+  ⚠️ Calidad mejorable - Ajustar ángulo de cámara
+  ⚠️ Asegurar que el atleta esté completamente visible
+
+ESTADÍSTICAS PRINCIPALES:
+------------------------------
+Altura de cadera:
+  - Promedio: 0.176
+  - Máximo: 0.623
+  - Mínimo: -0.850
+  - Desv. Est.: 0.411
+
+Ángulo de rodilla derecha:
+  - Promedio: 175.9°
+  - Máximo: 180.0°
+  - Mínimo: 138.4°
+  - Desv. Est.: 5.9°
+
+Índice de simetría:
+  - Promedio: 79.7%
+  - Máximo: 100.0%
+  - Mínimo: 0.0%
+
+Calidad de detección:
+  - Confianza promedio: 0.60
+  - Muestras con alta confianza (>0.7): 209/388 (53.9%)
+  - Evaluación: REGULAR calidad de detección

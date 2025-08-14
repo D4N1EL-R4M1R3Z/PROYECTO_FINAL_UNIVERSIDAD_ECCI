@@ -1,0 +1,22 @@
+{
+  "overall_score": 39.8,
+  "visual_quality": {
+    "confidence": {
+      "average": 0.597,
+      "min": 0.0,
+      "max": 0.993,
+      "samples_high_quality": 184,
+      "percentage_good": 66.0
+    },
+    "completeness": {
+      "average": 0.597,
+      "min": 0.0
+    },
+    "stability": 0
+  },
+  "recommendations": [
+    "⚠️ Calidad mejorable - Ajustar ángulo de cámara",
+    "⚠️ Asegurar que el atleta esté completamente visible"
+  ],
+  "analysis_timestamp": "2025-08-14T18:22:40.811586"
+}
