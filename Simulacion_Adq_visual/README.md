@@ -44,31 +44,35 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Atleta con 11 IMU ICM-20948] --> B[MUX A (0x70)\nIMU1–IMU8]
-    A --> C[MUX B (0x71)\nIMU9–IMU11]
-    B --> D[Bus I²C SDA/SCL]
+
+    %% ATLETA E IMUs
+    A[Atleta con 11 IMU ICM-20948] --> B[MUX A (0x70) IMU1-IMU8]
+    A --> C[MUX B (0x71) IMU9-IMU11]
+
+    %% MUX hacia ESP32
+    B --> D[Bus I2C SDA/SCL]
     C --> D
 
     %% ESP32
     D --> E[ESP32 MCU]
     E --> F[MicroSD (SPI)]
-    E --> G[Wi-Fi MQTT Client]
+    E --> G[WiFi MQTT Client]
 
     %% Conexión al PC
     G --> H[MQTT Broker en PC]
 
     %% PC pipeline
-    H --> I[MediaPipe + Visión Computador]
-    I --> J[Clasificador Fases\nRandom Forest (300 árboles)]
-    I --> K[Predicción Distancia\nGradient Boosting Regressor]
+    H --> I[MediaPipe y Vision por Computador]
+    I --> J[Clasificador Fases Random Forest 300]
+    I --> K[Prediccion Distancia Gradient Boosting]
 
     %% Resultados
-    J --> L[Almacenamiento + Visualización]
+    J --> L[Almacenamiento y Visualizacion]
     K --> L
 
     %% Cámaras
-    M[Cámara Lateral USB 3.0] --> I
-    N[Cámara Frontal USB 3.0] --> I
+    M[Camara Lateral USB 3.0] --> I
+    N[Camara Frontal USB 3.0] --> I
 ```
 
 ### **Clases diseñadas:**
