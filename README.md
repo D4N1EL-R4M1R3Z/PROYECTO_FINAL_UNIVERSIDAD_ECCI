@@ -300,16 +300,10 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 - Accesibilidad: Programas deportivos con recursos limitados
 - Transferencia de conocimiento: De élite hacia atletas en desarrollo
 
-### Mejoras Proyectadas en Atletas
-- Desarrollo: 8-15 cm mejora en distancia (3 meses)
-- Sub-élite: 3-8 cm mejora con refinamiento técnico
-- Élite: Mejoras marginales pero significativas (1-3 cm)
-
 ### Beneficios Adicionales
 - Prevención de lesiones: Detección de asimetrías
 - Base de datos normativa: Poblaciones latinoamericanas
 - Investigación: Contribución científica internacional
-
 
 ## Limitaciones y Consideraciones
 
@@ -345,8 +339,8 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 ## Documentación Técnica
 
 Para documentación completa, consultar:
-- [Documento Final del Proyecto](docs/RETO_FINAL_APA_v2_GRUPO_3.pdf)
-- [Especificaciones Técnicas](docs/RETO_FINAL___IEEE_v1.pdf)
+- [Documento Final del Proyecto](RETO_FINAL_APA_v2_GRUPO_3.pdf)
+- [Especificaciones Técnicas](RETO_FINAL___IEEE_v1.pdf)
 - Manual de Usuario
 
 
