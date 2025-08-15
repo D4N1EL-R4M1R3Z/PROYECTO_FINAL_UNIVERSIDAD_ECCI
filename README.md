@@ -161,7 +161,7 @@ python -c "import cv2; print([i for i in range(3) if cv2.VideoCapture(i).isOpene
    - Cálculo de métricas biomecánicas específicas del salto largo
    - Exportación automática a CSV, JSON y reportes
 
-   ![Modelo Completo](IMAGES/INTERFAZ DE USUARIO.png)
+![Interfaz de Usuario](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/INTERFAZ%20DE%20USUARIO.png?raw=true)
    
 
 2. **Prototipo de Validación MediaPipe**
