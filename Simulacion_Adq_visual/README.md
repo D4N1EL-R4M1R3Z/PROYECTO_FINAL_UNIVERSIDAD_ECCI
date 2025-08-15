@@ -46,33 +46,33 @@ graph TD
 graph TD
 
     %% ATLETA E IMUs
-    A[Atleta con 11 IMU ICM-20948] --> B[MUX A (0x70) IMU1-IMU8]
-    A --> C[MUX B (0x71) IMU9-IMU11]
+    A["Atleta con 11 IMU ICM20948"] --> B["MUX A 0x70 IMU1-IMU8"]
+    A --> C["MUX B 0x71 IMU9-IMU11"]
 
     %% MUX hacia ESP32
-    B --> D[Bus I2C SDA/SCL]
+    B --> D["Bus I2C SDA SCL"]
     C --> D
 
     %% ESP32
-    D --> E[ESP32 MCU]
-    E --> F[MicroSD (SPI)]
-    E --> G[WiFi MQTT Client]
+    D --> E["ESP32 MCU"]
+    E --> F["MicroSD SPI"]
+    E --> G["WiFi MQTT Client"]
 
     %% Conexión al PC
-    G --> H[MQTT Broker en PC]
+    G --> H["MQTT Broker en PC"]
 
     %% PC pipeline
-    H --> I[MediaPipe y Vision por Computador]
-    I --> J[Clasificador Fases Random Forest 300]
-    I --> K[Prediccion Distancia Gradient Boosting]
+    H --> I["MediaPipe y Vision por Computador"]
+    I --> J["Clasificador Fases Random Forest 300"]
+    I --> K["Prediccion Distancia Gradient Boosting"]
 
     %% Resultados
-    J --> L[Almacenamiento y Visualizacion]
+    J --> L["Almacenamiento y Visualizacion"]
     K --> L
 
     %% Cámaras
-    M[Camara Lateral USB 3.0] --> I
-    N[Camara Frontal USB 3.0] --> I
+    M["Camara Lateral USB3.0"] --> I
+    N["Camara Frontal USB3.0"] --> I
 ```
 
 ### **Clases diseñadas:**
