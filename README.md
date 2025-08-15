@@ -15,71 +15,6 @@
 
 ---
 
-## Resumen del Proyecto
-
-Este proyecto desarrolla una metodología innovadora que integra sensores inerciales (IMU) y visión por computador para el análisis biomecánico completo del salto largo en deportistas. El sistema combina 11 sensores ICM-20948 distribuidos estratégicamente con análisis visual MediaPipe, procesados mediante ESP32 con algoritmos de machine learning.
-
-### Características Principales
-- **Precisión:** ±3 cm en distancia de salto vs ±0.5 cm de sistemas láser profesionales
-- **Costo:** $1,200 USD vs $25,000-150,000 USD de sistemas profesionales
-- **Procesamiento:** 146.6 Hz para sensores generales, 1000 Hz para eventos críticos
-- **Análisis:** Clasificación automática de fases >97% precisión
-- **Portabilidad:** Sistema completamente móvil para condiciones de pista
-
----
-
-## Estructura del Repositorio
-```
-PROYECTO_FINAL_UNIVERSIDAD_ECCI/
-│
-├── Simulacion_Adq_visual/          # Modelo completo del sistema
-│   ├── modelo_completo.py          # Sistema integrado IMU + Visual
-│   ├── datos_simulados/            # Muestras de archivos generados
-│   │   ├── atleta_001_entrenamiento_visual_.csv
-│   │   ├── atleta_001_entrenamiento_imu_sim_.csv
-│   │   ├── atleta_001_entrenamiento_metadata_.json
-│   │   └── atleta_001_entrenamiento_reporte_.txt
-│   └── README_simulacion.md
-│
-├── Prototipo_prueba_mediapipe/     # Prototipo de validación MediaPipe
-│   ├── test_mediapipe.py           # Pruebas del framework
-│   ├── validacion_poses.py         # Validación de detección de poses
-│   └── README_prototipo.md
-│
-├── imagenes/                       # Capturas y documentación visual
-│   ├── interfaz_principal.png      # Interfaz gráfica principal
-│   ├── mediapipe_deteccion.png     # Detección de landmarks
-│   ├── graficos_tiempo_real.png    # Métricas en tiempo real
-│   ├── sistema_completo.png        # Diagrama del sistema
-│   └── resultados_analisis.png     # Resultados de análisis
-│
-├── docs/                           # Documentación técnica
-│   ├── RETO_FINAL_APA_v2_GRUPO_3.pdf  # Documento completo del proyecto
-│   ├── RETO_FINAL___IEEE_v1.pdf   # Articulo IEEE
-│
-└── README.md                       # Este archivo
-```
-
----
-
-
-# Sistema Híbrido Inercial-Visual para Análisis Biomecánico del Salto Largo
-
-**Universidad ECCI - Facultad de Ingeniería - Programa de Ingeniería Electrónica**
-
-## Autores
-- **Daniel Andrés Ramírez Segura**
-- **Jose Ángel Campo Vargas** 
-- **Diego Alejandro Lopez Mongua**
-
-**Directores:**
-- Ing. Ronald Rodriguez
-- Ing. Nataly Maldonado
-
-**Bogotá D.C., Colombia - Agosto 2025**
-
----
-
 # Sistema de Análisis Biomecánico de Saltos
 
 ## Descripción del Proyecto
@@ -87,6 +22,8 @@ PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis "Metodología Híbrida Inercial-Visual para el Análisis Técnico y Físico del Salto largo en Deportistas". El sistema utiliza **MediaPipe** para detectar poses humanas y calcular métricas biomecánicas en tiempo real, además se incorporá la lectura desde sensores inerciales (IMU) que cuentan con magnetometro para la ubicación espacial o geolocalización del sujeto de prueba, tambien para acceder a datos como acelearación lineal que nos permite el cálculo de la fuerza que actúa sobre nuestro sujeto, y el cálculo de la velocidad angular, para saber la rapidez con que nuestro deportista se mueve desde el punto de partida hasta las fases de punto de despegue, y posterior punto de aterrizaje.
 
 **NOTA:** Esta es una metodología para el diseño de este prototipo de forma completamente funcional, nuestro principal interés además de academico es satisfacer la creciente demanda de estos sistemas que aporten al deporte colombiano, contribuyendo en que desde diferentes sectores, poblaciones sin importar sus ingresos puedan acceder a entrenamientos que los acerquen a cumplir sus sueños de participar en estas competencias y lograr mejorar el rendimiento con estándares de deportistas profesionales, formando desde la electrónica y machine learning, personas con altos niveles de entrenamiento y aumentar las posibilidades de estar al nivel internacional de grandes figuras en el **salto largo**.
+
+
 
 
 ## Composición de modelo
@@ -130,6 +67,7 @@ graph TD
 
 
 ## Estructura del Repositorio
+```
 PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 │
 ├── Simulacion_Adq_visual/          # Modelo completo del sistema
@@ -158,7 +96,7 @@ PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 │   ├── RETO_FINAL___IEEE_v1.pdf   # Articulo IEEE
 │
 └── README.md                       # Este archivo
-
+```
 ---
 
 
@@ -177,7 +115,7 @@ PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 - **Frameworks:** OpenCV, MediaPipe, NumPy, Pandas
 - **Machine Learning:** Scikit-learn, Random Forest, Gradient Boosting
 - **Interfaz:** Tkinter con Matplotlib integrado
-- **Datos:** CSV, JSON para exportación estructurada
+- **Datos:** CSV, JSON, MP4 para exportación estructurada
 
 ---
 
