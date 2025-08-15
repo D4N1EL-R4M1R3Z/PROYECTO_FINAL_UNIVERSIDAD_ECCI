@@ -11,6 +11,38 @@ Este prototipo simula el sistema híbrido inercial-visual propuesto en la tesis 
 
 Este modelo corre sobre el framework de mediapipe, con el fin de encontrar landmarks para el cubrimiento completo del cuerpo humano y el principal objetivo de adquirir datos visuales importantes en el salto largo, para esto se diseñaron 3 clases diferentes que permiten generar la diversificación e inclución de los datos referentes a la POSE del sujeto de prueba, se adiciono grabación en tiempo real sobre el cuerpo con los landmarks escritos en los 33 puntos que provee.
 
-## Arquitectura de Diseño:
+### Arquitectura del proyecto
 
-A continuación se presenta el flujo que se siguio para el desarrollo de la metodología.
+```mermaid
+graph TD
+
+    %% ATLETA E IMUs
+    A["Atleta con 11 IMU ICM20948"] --> B["MUX A 0x70 IMU1-IMU8"]
+    A --> C["MUX B 0x71 IMU9-IMU11"]
+
+    %% MUX hacia ESP32
+    B --> D["Bus I2C SDA SCL"]
+    C --> D
+
+    %% ESP32
+    D --> E["ESP32 MCU"]
+    E --> F["MicroSD SPI"]
+    E --> G["WiFi MQTT Client"]
+
+    %% Conexión al PC
+    G --> H["MQTT Broker en PC"]
+
+    %% PC pipeline
+    H --> I["MediaPipe y Vision por Computador"]
+    I --> J["Clasificador Fases Random Forest 300"]
+    I --> K["Prediccion Distancia Gradient Boosting"]
+
+    %% Resultados
+    J --> L["Almacenamiento y Visualizacion"]
+    K --> L
+
+    %% Cámaras
+    M["Camara Lateral USB3.0"] --> I
+    N["Camara Frontal USB3.0"] --> I
+```
+
