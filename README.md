@@ -29,6 +29,7 @@ Este proyecto desarrolla una metodología innovadora que integra sensores inerci
 ---
 
 ## Estructura del Repositorio
+```
 PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 │
 ├── Simulacion_Adq_visual/          # Modelo completo del sistema
@@ -57,6 +58,7 @@ PROYECTO_FINAL_UNIVERSIDAD_ECCI/
 │   ├── RETO_FINAL___IEEE_v1.pdf   # Articulo IEEE
 │
 └── README.md                       # Este archivo
+```
 
 ---
 
