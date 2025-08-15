@@ -40,6 +40,78 @@ graph TD
     C --> G[Exportación de Datos]
 ```
 
+### Arquitectura del proyecto
+
+```mermaid
+flowchart LR
+  subgraph Atleta [Atleta]
+    direction TB
+    IMU1[IMU 1<br/>ICM-20948]
+    IMU2[IMU 2]
+    IMU3[IMU 3]
+    IMU4[IMU 4]
+    IMU5[IMU 5]
+    IMU6[IMU 6]
+    IMU7[IMU 7]
+    IMU8[IMU 8]
+    IMU9[IMU 9]
+    IMU10[IMU 10]
+    IMU11[IMU 11]
+  end
+
+  subgraph MUXes [Multiplexores I2C (TCA9548A)]
+    direction TB
+    MUXA[TCA9548A @0x70<br/>ch0..ch7 → IMU1..IMU8]
+    MUXB[TCA9548A @0x71<br/>ch0..ch2 → IMU9..IMU11]
+  end
+
+  subgraph ESP [ESP32]
+    I2C[SDA/SCL]
+    SD[MicroSD (SPI)]
+    WiFi[Wi-Fi MQTT Client]
+  end
+
+  subgraph PC [Computador]
+    MQTTBroker[Broker/Cliente MQTT]
+    MP[MediaPipe + CV]
+    RF[Clasificador Fases<br/>Random Forest 300 árboles]
+    GBR[Regresión Distancia<br/>Gradient Boosting Regressor]
+    DB[Almacenamiento / Visualización]
+  end
+
+  subgraph Camaras [Cámaras USB 3.0 (250 fps)]
+    Cam1[Lateral USB 3.0]
+    Cam2[Frontal USB 3.0]
+  end
+
+  %% conexiones
+  IMU1--I2C-->MUXA
+  IMU2--I2C-->MUXA
+  IMU3--I2C-->MUXA
+  IMU4--I2C-->MUXA
+  IMU5--I2C-->MUXA
+  IMU6--I2C-->MUXA
+  IMU7--I2C-->MUXA
+  IMU8--I2C-->MUXA
+  IMU9--I2C-->MUXB
+  IMU10--I2C-->MUXB
+  IMU11--I2C-->MUXB
+
+  MUXA--SDA/SCL-->I2C
+  MUXB--SDA/SCL-->I2C
+
+  SD--SPI-->ESP
+  WiFi--MQTT-->MQTTBroker
+  MQTTBroker--"tópicos IMU/estado"-->MP
+  MP--"features/ángulos/CoM/vel"-->RF
+  MP--"features/ángulos/CoM/vel"-->GBR
+  RF--resultados-->DB
+  GBR--resultados-->DB
+
+  Cam1--USB3.0-->PC
+  Cam2--USB3.0-->PC
+```
+
 ### **Clases diseñadas:**
 ### 1. **Adquisición Visual** (`CameraDataAcquisition`)
 - Captura de video desde webcam o cámara profesional
