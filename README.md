@@ -161,8 +161,8 @@ python -c "import cv2; print([i for i in range(3) if cv2.VideoCapture(i).isOpene
    - Cálculo de métricas biomecánicas específicas del salto largo
    - Exportación automática a CSV, JSON y reportes
 
-![Interfaz de Usuario](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/INTERFAZ%20DE%20USUARIO.png?raw=true)
-   
+
+   ![FIles](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES/Archivos_Data_adq.png?raw=true)
 
 2. **Prototipo de Validación MediaPipe**
    ```bash
@@ -176,7 +176,7 @@ python -c "import cv2; print([i for i in range(3) if cv2.VideoCapture(i).isOpene
    - Calibración de parámetros de confianza
    - Base para el desarrollo del sistema completo
 
-   ![Prototipo MediaPipe](imagenes/mediapipe_deteccion.png)
+   ![Prototipo MediaPipe](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/POSE%20FRONTAL.png?raw=true)
 
 ## Métricas Biomecánicas Calculadas
 
@@ -254,7 +254,7 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 - Recomendaciones técnicas
 - Métricas biomecánicas principales
 
-![Resultados de Análisis](imagenes/resultados_analisis.png)
+![Resultados de Análisis]([imagenes/resultados_analisis.png](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/LATERAL_L3.png)?raw=true)
 
 ## Validación y Precisión
 
@@ -287,7 +287,7 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 - Error: MAE <6 cm para predicción a 5m de tabla
 - Correlación: R² >0.92 en validación
 
-### Clasificador de Técnicas de Vuelo
+### Clasificador de Técnicas de Vuelo (Se espera)
 - Técnicas: Extensión, Tijera, Colgado
 - Precisión: >92% para técnicas bien ejecutadas
 - Análisis: Calidad de ejecución (0-100)
