@@ -42,75 +42,103 @@ graph TD
 
 ### Arquitectura del proyecto
 
-```mermaid
-flowchart LR
-  subgraph Atleta [Atleta]
+flowchart TB
+
+%% =============================
+%% SECCIÓN: ATLETA Y SENSORES
+%% =============================
+subgraph Atleta ["Atleta con 11 IMU ICM-20948"]
     direction TB
-    IMU1[IMU 1<br/>ICM-20948]
-    IMU2[IMU 2]
-    IMU3[IMU 3]
-    IMU4[IMU 4]
-    IMU5[IMU 5]
-    IMU6[IMU 6]
-    IMU7[IMU 7]
-    IMU8[IMU 8]
-    IMU9[IMU 9]
-    IMU10[IMU 10]
-    IMU11[IMU 11]
-  end
+    IMU1["IMU1"]
+    IMU2["IMU2"]
+    IMU3["IMU3"]
+    IMU4["IMU4"]
+    IMU5["IMU5"]
+    IMU6["IMU6"]
+    IMU7["IMU7"]
+    IMU8["IMU8"]
+    IMU9["IMU9"]
+    IMU10["IMU10"]
+    IMU11["IMU11"]
+end
 
-  subgraph MUXes [Multiplexores I2C (TCA9548A)]
+%% =============================
+%% SECCIÓN: MULTIPLEXORES
+%% =============================
+subgraph MUXes ["Multiplexores I²C TCA9548A"]
     direction TB
-    MUXA[TCA9548A @0x70<br/>ch0..ch7 → IMU1..IMU8]
-    MUXB[TCA9548A @0x71<br/>ch0..ch2 → IMU9..IMU11]
-  end
+    MUXA["MUX A (0x70)\nch0-7 → IMU1–IMU8"]
+    MUXB["MUX B (0x71)\nch0-2 → IMU9–IMU11"]
+end
 
-  subgraph ESP [ESP32]
-    I2C[SDA/SCL]
-    SD[MicroSD (SPI)]
-    WiFi[Wi-Fi MQTT Client]
-  end
+%% =============================
+%% SECCIÓN: ESP32
+%% =============================
+subgraph ESP ["ESP32 DevKit V1"]
+    I2C["I²C SDA/SCL"]
+    SD["Módulo microSD (SPI)"]
+    WiFi["Wi-Fi MQTT Client"]
+end
 
-  subgraph PC [Computador]
-    MQTTBroker[Broker/Cliente MQTT]
-    MP[MediaPipe + CV]
-    RF[Clasificador Fases<br/>Random Forest 300 árboles]
-    GBR[Regresión Distancia<br/>Gradient Boosting Regressor]
-    DB[Almacenamiento / Visualización]
-  end
+%% =============================
+%% SECCIÓN: COMPUTADOR
+%% =============================
+subgraph PC ["Computador"]
+    Broker["MQTT Broker/Cliente"]
+    MP["MediaPipe + Visión por Computador"]
+    RF["Clasificador de fases\nRandom Forest (300 árboles)"]
+    GBR["Predicción distancia\nGradient Boosting Regressor"]
+    DB["Almacenamiento + Visualización"]
+end
 
-  subgraph Camaras [Cámaras USB 3.0 (250 fps)]
-    Cam1[Lateral USB 3.0]
-    Cam2[Frontal USB 3.0]
-  end
+%% =============================
+%% SECCIÓN: CÁMARAS
+%% =============================
+subgraph Cams ["Cámaras USB 3.0 (250 fps)"]
+    Cam1["Cámara Lateral"]
+    Cam2["Cámara Frontal"]
+end
 
-  %% conexiones
-  IMU1--I2C-->MUXA
-  IMU2--I2C-->MUXA
-  IMU3--I2C-->MUXA
-  IMU4--I2C-->MUXA
-  IMU5--I2C-->MUXA
-  IMU6--I2C-->MUXA
-  IMU7--I2C-->MUXA
-  IMU8--I2C-->MUXA
-  IMU9--I2C-->MUXB
-  IMU10--I2C-->MUXB
-  IMU11--I2C-->MUXB
+%% =============================
+%% CONEXIONES
+%% =============================
 
-  MUXA--SDA/SCL-->I2C
-  MUXB--SDA/SCL-->I2C
+%% IMUs → MUX
+IMU1 -->|I²C| MUXA
+IMU2 -->|I²C| MUXA
+IMU3 -->|I²C| MUXA
+IMU4 -->|I²C| MUXA
+IMU5 -->|I²C| MUXA
+IMU6 -->|I²C| MUXA
+IMU7 -->|I²C| MUXA
+IMU8 -->|I²C| MUXA
+IMU9 -->|I²C| MUXB
+IMU10 -->|I²C| MUXB
+IMU11 -->|I²C| MUXB
 
-  SD--SPI-->ESP
-  WiFi--MQTT-->MQTTBroker
-  MQTTBroker--"tópicos IMU/estado"-->MP
-  MP--"features/ángulos/CoM/vel"-->RF
-  MP--"features/ángulos/CoM/vel"-->GBR
-  RF--resultados-->DB
-  GBR--resultados-->DB
+%% MUX → ESP32
+MUXA -->|SDA/SCL| I2C
+MUXB -->|SDA/SCL| I2C
 
-  Cam1--USB3.0-->PC
-  Cam2--USB3.0-->PC
-```
+%% ESP32 ↔ microSD
+SD <-->|SPI| ESP
+
+%% ESP32 → WiFi
+ESP -->|Wi-Fi MQTT| WiFi --> Broker
+
+%% Broker → MediaPipe → ML
+Broker --> MP
+MP --> RF
+MP --> GBR
+
+%% ML → DB
+RF --> DB
+GBR --> DB
+
+%% Cámaras → PC
+Cam1 -->|USB 3.0| MP
+Cam2 -->|USB 3.0| MP
+
 
 ### **Clases diseñadas:**
 ### 1. **Adquisición Visual** (`CameraDataAcquisition`)
