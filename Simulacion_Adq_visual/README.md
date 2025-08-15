@@ -42,103 +42,38 @@ graph TD
 
 ### Arquitectura del proyecto
 
-flowchart TB
+```mermaid
+graph TD
 
-%% =============================
-%% SECCIÓN: ATLETA Y SENSORES
-%% =============================
-subgraph Atleta ["Atleta con 11 IMU ICM-20948"]
-    direction TB
-    IMU1["IMU1"]
-    IMU2["IMU2"]
-    IMU3["IMU3"]
-    IMU4["IMU4"]
-    IMU5["IMU5"]
-    IMU6["IMU6"]
-    IMU7["IMU7"]
-    IMU8["IMU8"]
-    IMU9["IMU9"]
-    IMU10["IMU10"]
-    IMU11["IMU11"]
-end
+    %% ATLETA E IMUs
+    A[Atleta con 11 IMU ICM-20948] --> B[MUX A (0x70)\nIMU1–IMU8]
+    A --> C[MUX B (0x71)\nIMU9–IMU11]
 
-%% =============================
-%% SECCIÓN: MULTIPLEXORES
-%% =============================
-subgraph MUXes ["Multiplexores I²C TCA9548A"]
-    direction TB
-    MUXA["MUX A (0x70)\nch0-7 → IMU1–IMU8"]
-    MUXB["MUX B (0x71)\nch0-2 → IMU9–IMU11"]
-end
+    %% MUX hacia ESP32
+    B --> D[Bus I²C SDA/SCL]
+    C --> D
 
-%% =============================
-%% SECCIÓN: ESP32
-%% =============================
-subgraph ESP ["ESP32 DevKit V1"]
-    I2C["I²C SDA/SCL"]
-    SD["Módulo microSD (SPI)"]
-    WiFi["Wi-Fi MQTT Client"]
-end
+    %% ESP32
+    D --> E[ESP32 MCU]
+    E --> F[MicroSD (SPI)]
+    E --> G[Wi-Fi MQTT Client]
 
-%% =============================
-%% SECCIÓN: COMPUTADOR
-%% =============================
-subgraph PC ["Computador"]
-    Broker["MQTT Broker/Cliente"]
-    MP["MediaPipe + Visión por Computador"]
-    RF["Clasificador de fases\nRandom Forest (300 árboles)"]
-    GBR["Predicción distancia\nGradient Boosting Regressor"]
-    DB["Almacenamiento + Visualización"]
-end
+    %% Conexión al PC
+    G --> H[MQTT Broker en PC]
 
-%% =============================
-%% SECCIÓN: CÁMARAS
-%% =============================
-subgraph Cams ["Cámaras USB 3.0 (250 fps)"]
-    Cam1["Cámara Lateral"]
-    Cam2["Cámara Frontal"]
-end
+    %% PC pipeline
+    H --> I[MediaPipe + Visión Computador]
+    I --> J[Clasificador Fases\nRandom Forest (300 árboles)]
+    I --> K[Predicción Distancia\nGradient Boosting Regressor]
 
-%% =============================
-%% CONEXIONES
-%% =============================
+    %% Resultados
+    J --> L[Almacenamiento + Visualización]
+    K --> L
 
-%% IMUs → MUX
-IMU1 -->|I²C| MUXA
-IMU2 -->|I²C| MUXA
-IMU3 -->|I²C| MUXA
-IMU4 -->|I²C| MUXA
-IMU5 -->|I²C| MUXA
-IMU6 -->|I²C| MUXA
-IMU7 -->|I²C| MUXA
-IMU8 -->|I²C| MUXA
-IMU9 -->|I²C| MUXB
-IMU10 -->|I²C| MUXB
-IMU11 -->|I²C| MUXB
-
-%% MUX → ESP32
-MUXA -->|SDA/SCL| I2C
-MUXB -->|SDA/SCL| I2C
-
-%% ESP32 ↔ microSD
-SD <-->|SPI| ESP
-
-%% ESP32 → WiFi
-ESP -->|Wi-Fi MQTT| WiFi --> Broker
-
-%% Broker → MediaPipe → ML
-Broker --> MP
-MP --> RF
-MP --> GBR
-
-%% ML → DB
-RF --> DB
-GBR --> DB
-
-%% Cámaras → PC
-Cam1 -->|USB 3.0| MP
-Cam2 -->|USB 3.0| MP
-
+    %% Cámaras
+    M[Cámara Lateral USB 3.0] --> I
+    N[Cámara Frontal USB 3.0] --> I
+```
 
 ### **Clases diseñadas:**
 ### 1. **Adquisición Visual** (`CameraDataAcquisition`)
