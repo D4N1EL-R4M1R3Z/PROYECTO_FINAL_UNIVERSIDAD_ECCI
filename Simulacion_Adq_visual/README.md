@@ -44,12 +44,8 @@ graph TD
 
 ```mermaid
 graph TD
-
-    %% ATLETA E IMUs
     A[Atleta con 11 IMU ICM-20948] --> B[MUX A (0x70)\nIMU1–IMU8]
     A --> C[MUX B (0x71)\nIMU9–IMU11]
-
-    %% MUX hacia ESP32
     B --> D[Bus I²C SDA/SCL]
     C --> D
 
