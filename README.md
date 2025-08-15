@@ -339,8 +339,8 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 ## Documentación Técnica
 
 Para documentación completa, consultar:
-- [Documento Final del Proyecto](RETO_FINAL_APA_v2_GRUPO_3.pdf)
-- [Especificaciones Técnicas](RETO_FINAL___IEEE_v1.pdf)
+- [Documento Final del Proyecto](RETO_FINAL___APA_v2_GRUPO_3.pdf)
+- [Especificaciones Técnicas](RETO_FINAL__IEEE_v1.pdf)
 - Manual de Usuario
 
 
