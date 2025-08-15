@@ -207,7 +207,7 @@ python -c "import cv2; print([i for i in range(3) if cv2.VideoCapture(i).isOpene
 
 ## Interfaz de Usuario
 
-![Interfaz de Usuario](imagenes/graficos_tiempo_real.png)
+![Interfaz de Usuario]([imagenes/graficos_tiempo_real.png](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/INTERFAZ%20DE%20USUARIO.png))
 
 ### Panel de Control
 - Configuración de sesión: ID atleta, tipo, duración
