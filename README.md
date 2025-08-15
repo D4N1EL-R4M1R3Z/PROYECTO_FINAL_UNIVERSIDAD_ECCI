@@ -330,19 +330,12 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 - Aplicaciones en medicina deportiva
 - Versiones para fitness recreativo y educación
 
-### Comercialización
-- Sistema Profesional: $2,500-4,000
-- Sistema Educativo: $800-1,500
-- Aplicación móvil freemium
-
 
 ## Documentación Técnica
 
 Para documentación completa, consultar:
 - [Documento Final del Proyecto](RETO_FINAL___APA_v2_GRUPO_3.pdf)
-- [Especificaciones Técnicas](RETO_FINAL__IEEE_v1.pdf)
-- Manual de Usuario
-
+- [Articulo](RETO_FINAL___IEEE_v1.pdf)
 
 ## Contacto y Soporte
 
