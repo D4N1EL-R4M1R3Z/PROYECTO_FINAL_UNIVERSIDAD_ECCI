@@ -254,7 +254,7 @@ timestamp,sensor_id,location,accel_x,accel_y,accel_z,gyro_x,gyro_y,gyro_z,mag_x,
 - Recomendaciones técnicas
 - Métricas biomecánicas principales
 
-![Resultados de Análisis]([imagenes/resultados_analisis.png](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/LATERAL_L3.png)?raw=true)
+![Resultados de Análisis](https://github.com/D4N1EL-R4M1R3Z/PROYECTO_FINAL_UNIVERSIDAD_ECCI/blob/main/IMAGES%20/LATERAL_R1.png?raw=true)
 
 ## Validación y Precisión
 
